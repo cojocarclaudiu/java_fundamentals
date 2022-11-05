@@ -57,9 +57,16 @@ public class Main {
         System.out.print("weight= ");
         int weight = scann.nextInt();
         System.out.println("Area = " + (length*weight));
-        System.out.println("Circumference = " + (2*(length+weight)));
+        System.out.println("Circumference = " + (2*(length+weight))+ "\n\n");
 
 
-
+        System.out.println("2.Declare two variables corresponding to the sides of a right-angled triangle and calculate its area.");
+        System.out.print("firstSide= ");
+        int firstSide = scann.nextInt();
+        System.out.print("secondSide = ");
+        int secondSide = scann.nextInt();
+        System.out.println("Area= " + (firstSide*secondSide/2));
+        System.out.println("BONUS!!! hypotenuse= " + (Math.sqrt(Math.pow(firstSide, 2)+ Math.pow(secondSide ,2))));
+        System.out.println("testing hypotenuse with Math.hypo : (" + Math.hypot(firstSide,secondSide) + ")");
     }
 }
