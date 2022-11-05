@@ -67,6 +67,12 @@ public class Main {
         int secondSide = scann.nextInt();
         System.out.println("Area= " + (firstSide*secondSide/2));
         System.out.println("BONUS!!! hypotenuse= " + (Math.sqrt(Math.pow(firstSide, 2)+ Math.pow(secondSide ,2))));
-        System.out.println("testing hypotenuse with Math.hypo : (" + Math.hypot(firstSide,secondSide) + ")");
+        System.out.println("testing hypotenuse with Math.hypo : (" + Math.hypot(firstSide,secondSide) + ")\n\n");
+
+        System.out.println("3.Declare the variable corresponding to the diameter of a circle and count its area and circumference.");
+        System.out.print("diameter= ");
+        int diameter = scann.nextInt();
+        System.out.println("Area= " + (Math.PI * Math.pow(diameter/2,2)));
+        System.out.println("Circumferences= " + (Math.PI  * diameter) + "\n\n");
     }
 }
