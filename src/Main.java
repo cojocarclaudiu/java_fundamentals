@@ -72,7 +72,20 @@ public class Main {
         System.out.println("3.Declare the variable corresponding to the diameter of a circle and count its area and circumference.");
         System.out.print("diameter= ");
         int diameter = scann.nextInt();
-        System.out.println("Area= " + (Math.PI * Math.pow(diameter/2,2)));
+        System.out.println("Area= " + (Math.PI * Math.pow(diameter/2.0,2)));
         System.out.println("Circumferences= " + (Math.PI  * diameter) + "\n\n");
+
+        System.out.println("4.Declare three variables corresponding to the sides of a triangle and check whether it is right-angled.");
+        System.out.print("A= ");
+        int a = scann.nextInt();
+        System.out.print("B= ");
+        int b= scann.nextInt();
+        System.out.print("C= ");
+        int c= scann.nextInt();
+        System.out.print("Triangle with a= " + a + ", b= " + b + " and c= " + c);
+        if(c == Math.hypot(a,b)){
+            System.out.print(" its a right-angle.\n\n");
+        }else System.out.print(" it is not a right-angle.\n\n");
+
     }
 }
