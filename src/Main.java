@@ -1,3 +1,6 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Exercises ");
@@ -43,5 +46,20 @@ public class Main {
         String constantString = "Baeldung";
         String newString = new String("Baeldung");
         System.out.println(constantString.equals(newString));
+
+
+        System.out.println("\n%%%%%%%%%%%GEOMETRY EXERCISES%%%%%%%%%%%%%%%%%%%\n");
+
+        System.out.println("1.Declare two variables corresponding to the sides of a rectangle and count its area and circumference");
+        Scanner scann = new Scanner(System.in);
+        System.out.print("length= ");
+        int length = scann.nextInt();
+        System.out.print("weight= ");
+        int weight = scann.nextInt();
+        System.out.println("Area = " + (length*weight));
+        System.out.println("Circumference = " + (2*(length+weight)));
+
+
+
     }
 }
