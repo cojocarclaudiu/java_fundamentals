@@ -82,10 +82,17 @@ public class Main {
         int b= scann.nextInt();
         System.out.print("C= ");
         int c= scann.nextInt();
-        System.out.print("Triangle with a= " + a + ", b= " + b + " and c= " + c);
-        if(c == Math.hypot(a,b)){
-            System.out.print(" its a right-angle.\n\n");
-        }else System.out.print(" it is not a right-angle.\n\n");
+        System.out.print("Triangle with a= " + a + ", b= " + b + " and c= " + c +
+                (c == Math.hypot(a,b) ? " its a right-angle.\n\n" : " it is not a right-angle.\n\n"));
+//        if(c == Math.hypot(a,b)){
+//            System.out.print(" its a right-angle.\n\n");
+//        }else System.out.print(" it is not a right-angle.\n\n");
+
+
+        System.out.println("5.Declare a variable corresponding to age; use a ternary operator to display: adult or underage.");
+        System.out.print("Age= ");
+        int age = scann.nextInt();
+        System.out.println(age < 18 ? "No alcohol for you" : "Take your beer. Its on the house!");
 
     }
 }
