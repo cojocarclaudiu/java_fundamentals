@@ -238,5 +238,233 @@ public class Main {
         personTwo.yearsBeforeRetirement();
         personTwo.hasReachedRetirementAge();
         System.out.println(personTwo.differenceOfYears(personOne)+"\n");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Final assignments@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+
+        System.out.println("1.Write a program that will display a multiplication table to one hundred.(use format)\n");
+        for (int i = 1 ; i < 101; i++){
+            System.out.printf("%4s",i);
+            if(i % 10 == 0) System.out.println();
+        }
+
+        System.out.println("\n2.Extend the multiplication table with horizontal and vertical lines and borders composed\n " +
+                "of characters |, - and +.\n");
+        int matrix[][] = new int[5][2];
+        int num = 1;
+        //populating the array;
+        for(int i = 0 ; i < matrix.length;i++){
+            for (int j = 0 ; j < matrix[i].length;j++){
+                matrix[i][j] = num++;
+            }
+        }
+        //display the array
+        for (int numbers[]: matrix) {
+            displayLine(matrix);
+            for (int number: numbers) {
+                System.out.print(String.format("|%2s ",number));
+            }
+            System.out.print("|\n");
+        }
+        displayLine(matrix);
+
+        System.out.println("3.Write a program that would draw the following patterns.\n");
+
+        System.out.println("\nTriangle 1");
+        for(int k = 1 ; k <= 8 ; k ++){
+            for(int kk = 0 ; kk < k ; kk ++){
+                System.out.print(" #");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nTriangle 2");
+        for(int k = 8 ; k > 0 ; k --){
+            for(int kk = 0 ; kk < k ; kk ++){
+                System.out.print(" #");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nTriangle 3");
+        String count = "              ";
+        for(int k = 1 ; k <= 8; k ++){
+            System.out.print(count);
+            for(int kk = 0 ; kk < k ; kk ++){
+                System.out.print(" #");
+            }
+            if(count.length()>1){
+                count = count.substring(2);
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nTriangle 4");
+        String count2 = "";
+        for(int k = 8 ; k >= 0; k --){
+            System.out.print(count2);
+            for(int kk = 0 ; kk < k ; kk ++){
+                System.out.print(" #");
+            }
+            if(count.length()<8){
+                count2 = count2.concat("  ");
+            }
+            System.out.println();
+        }
+        System.out.println("\nSquare ");
+        for(int i = 0 ; i < 8 ; i ++){
+            System.out.println( i == 0 || i == 7 ? " # # # # # # # #" :" #             #" );
+        }
+        System.out.println("\nLetter S");
+        String firstString = " ";
+        for(int i = 0 ; i < 8 ; i ++){
+            System.out.println( i == 0 || i == 7 ? " # # # # # # # #" :(firstString +"# "));
+            firstString = firstString.concat("  ");
+        }
+        System.out.println("\nLetter Z");
+        String lastString = "               ";
+        for(int i = 0 ; i < 8 ; i ++){
+            System.out.println( i == 0 || i == 7 ? " # # # # # # # #" :(lastString +"#"));
+            if(lastString.length()>1) lastString = lastString.substring(2);
+        }
+//        System.out.println("4.Write a program multiplies the digits for a given number (as String) until the result is a one-digit number. \n");
+//
+//        System.out.println("5.Write a program that checks who won a Tic-Tac-Toe game.\n");
+//
+//        System.out.println("6.Write a program that validates the correctness of a given personal ID number.\n");
+//
+//        System.out.println("7.A Car class is provided:" +
+//                "Generate getter and setter methods for all fields; use key shortcuts Alt+Ins\n" +
+//                "\n" +
+//                "Test the Car class using the CarApplication class" +
+//                "Add a field to store the mileage (int mileage) to the Car program; set the default value to 0\n" +
+//                "\n" +
+//                "Add (generate) a getter type method for this field (getMileage())\n" +
+//                "\n" +
+//                "Add the drive(int mileage) method that increases the mileage\n" +
+//                "\n" +
+//                "Test the program operation\n" +
+//                "\n" +
+//                "Modify the drive(int mileage) method to set the used field to the appropriate value; " +
+//                "if the mileage is positive, the used field should have value true\n" +
+//                "\n" +
+//                "Test the operation\n");
+//
+//        System.out.println("8.The Calculator and CalculatorApplication classes are provided:" +
+//                "Based on the add(int a, int b) method, implement the subsequent methods:\n" +
+//                "\n" +
+//                "int subtract(int a, int b) - subtraction: a - b\n" +
+//                "\n" +
+//                "int multiply(int a, int b) - multiplication: a * b\n" +
+//                "\n" +
+//                "double divide(int a, int b) - division: a / b\n" +
+//                "\n" +
+//                "boolean isPositive(int a) - checks whether the number is positive\n" +
+//                "\n" +
+//                "boolean isNegative(int a) - checks whether the number is negative\n" +
+//                "\n" +
+//                "boolean isOdd(int a) - checks whether the number is odd\n" +
+//                "\n" +
+//                "int min(int a, int b) - returns the smaller of the numbers\n" +
+//                "\n" +
+//                "int max(int a, int b) - returns the greater of the numbers\n" +
+//                "\n" +
+//                "double average(int a, int b) - returns the average for the numbers\n" +
+//                "\n" +
+//                "int power(int a, int x) - returns a^m^ (a to the power m)\n" +
+//                "\n" +
+//                "Based on the solution from point a, implement 3-argument versions of these methods " +
+//                "(try to use 2 - argument versions of these methods):\n" +
+//                "\n" +
+//                "int add(int a, int b, int c)\n" +
+//                "\n" +
+//                "int subtract(int a, int b, int c)\n" +
+//                "\n" +
+//                "int multiply(int a, int b, int c)\n" +
+//                "\n" +
+//                "double divide(int a, int b, int c)\n" +
+//                "\n" +
+//                "int min(int a, int b, int c)\n" +
+//                "\n" +
+//                "int max(int a, int b, int c)\n" +
+//                "\n" +
+//                "double average(int a, int b, int c)\n");
+//
+//        System.out.println("9.Implement a stack to store Integer type numbers." +
+//                "the constructor creates a count element array for storing Integer type elements\n" +
+//                "\n" +
+//                "the push() method throws the element onto the stack (to the first free position). If the stack is empty, a relevant message is displayed and nothing happens\n" +
+//                "\n" +
+//                "the pop() method deletes (returns and removes from the stack) the first element from the “top” of the stack. If the stack is empty, the method displays an appropriate message and nothing is done (null to be returned)\n" +
+//                "\n" +
+//                "the isEmpty() methods checks whether the stack is empty, i.e. whether there is no element in the array\n" +
+//                "\n" +
+//                "the isFull() method checks whether the stack is full, i.e. for example at a 5 - element stack, all 5 array elements have a value (other than null)\n" +
+//                "\n" +
+//                "the toString() method displays the stack contents\n" +
+//                "\n" +
+//                "hint: enter an additional variable that stores the index of the current or next item in the array and modify its value when implementing the push() and pop() methods`\n");
+//
+//        System.out.println("10.Based on the task above, write a program that will \"mimic\" an array of any size " +
+//                "that can hold values of type Integer. There is a class:\n" +
+//                "Functionalities:\n" +
+//                "\n" +
+//                "IntArray() - constructor, it should create an initial array with an initial, default size\n" +
+//                "\n" +
+//                "void add(Integer value) - adds an element to the next position; enlarges the array if necessary\n" +
+//                "\n" +
+//                "creates a new, bigger one\n" +
+//                "\n" +
+//                "rewrites the current values\n" +
+//                "\n" +
+//                "adds a new item\n" +
+//                "\n" +
+//                "void add(Integer value, int idx) - adds an element to the indicated position; if necessary, this is done by the method above\n" +
+//                "\n" +
+//                "Integer get(int idx) - returns the item at position idx; if not there, it returns null\n" +
+//                "\n" +
+//                "void remove(int idx) - removes the item at position idx\n" +
+//                "\n" +
+//                "void swap(int from, int to) - swap items in the from andto positions; enlarges the array if necessary\n" +
+//                "\n" +
+//                "String toString() - displays the entire array");
+//
+//        System.out.println("11.Account and AccountApplication classes are provided:" +
+//                "Set a default value 0 for the balance field\n" +
+//                "\n" +
+//                "Add (generate) getter and setter type methods for the name field\n" +
+//                "\n" +
+//                "Add (generate) a getter type method for the balance field\n" +
+//                "\n" +
+//                "Add a (private) debit field of the boolean type that determines whether the account balance is negative; set the default value to false\n" +
+//                "\n" +
+//                "Add the possibility to deposit and withdraw money" +
+//                "Implement the above methods\n" +
+//                "\n" +
+//                "The withdraw method is to set the debit field to true when the account balance is negative\n" +
+//                "\n" +
+//                "Check the operation of the method\n" +
+//                "\n" +
+//                "Add validation of the amount parameter in the deposit and withdraw methods;\n" +
+//                "\n" +
+//                "the methods are to perform the logics only when the amount value is positive\n" +
+//                "\n" +
+//                "otherwise they are to display the following message: \"The deposit/withdrawal amount must be positive!\"\n" +
+//                "\n" +
+//                "For the withdraw method, add the message display: \"Negative account balance\" if the debit field value is true\n" +
+//                "\n" +
+//                "For the deposit and withdraw methods, add a summary display like the one below (e.g. for deposit and withdraw, respectively)" +
+//                "Add a function to support the maximum debit, e.g.1000. If the amount after the operation is lower, do not execute withdrawal but display the message: \"You cannot perform an operation exceeding the debit\"\n" +
+//                "\n" +
+//                "Implement the transfer method for transfers from the current account to another one.\n");
+    }
+
+    private static void displayLine(int[][] matrix) {
+        for (int numbers[]: matrix) {
+            for (int number: numbers) {
+                System.out.print("+---");
+            }
+            System.out.print("+\n");
+            return;
+        }
+
     }
 }
