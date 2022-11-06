@@ -1,5 +1,6 @@
-import java.sql.SQLOutput;
+import java.time.temporal.WeekFields;
 import java.util.Scanner;
+import java.time.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,7 +52,7 @@ public class Main {
         System.out.println("\n%%%%%%%%%%%GEOMETRY EXERCISES%%%%%%%%%%%%%%%%%%%\n");
 
         System.out.println("1.Declare two variables corresponding to the sides of a rectangle and count its area and circumference");
-        Scanner scann = new Scanner(System.in);
+          Scanner scann = new Scanner(System.in);
         System.out.print("length= ");
         int length = scann.nextInt();
         System.out.print("weight= ");
@@ -89,6 +90,41 @@ public class Main {
         System.out.print("Age= ");
         int age = scann.nextInt();
         System.out.println(age < 18 ? "No alcohol for you" : "Take your beer. Its on the house!");
+
+        System.out.println("\n###############CONDITIONAL STATEMENTS##################\n");
+
+        System.out.println("1.Simulate a roll of dice. Display the result (even or odd). If the result is 6, write additionally the word WON\n");
+        int result;
+        do{
+            result = (int) (Math.random() * 6 + 1);
+            System.out.print(result % 2 == 0 ? result + " is odd." : result + " is even.");
+            System.out.println(result == 6 ? "WON!!!\n" : "\n");
+            System.out.println("Roll the dice again?   (1-yes ///0-exit)");
+            result = scann.nextInt();
+        }while(result !=0);
+
+
+        System.out.println("2.Using a class that offers date and time operations, download:");
+        System.out.println("Current time: " + LocalTime.now());
+        LocalDate todayDate = LocalDate.now();
+        DayOfWeek today = todayDate.getDayOfWeek();
+        System.out.println("Number of the day of the week: " + today.getValue());
+        System.out.println("Number of the day of the month: " + todayDate.getDayOfMonth());
+        Month monthToday = todayDate.getMonth();
+        System.out.println("Number of the month: " + monthToday.getValue());
+
+        System.out.println("\n");
+
+        System.out.print("day: ");
+        int day = scann.nextByte();
+        System.out.print("month: ");
+        int month = scann.nextByte();
+        System.out.print("year: ");
+        int year = scann.nextShort();
+        LocalDate userDate = LocalDate.of(year, month, day);
+        System.out.println("Your date is : " + userDate + " This day is a " +
+                (userDate.getDayOfWeek().getValue() == 6 || userDate.getDayOfWeek().getValue() == 7 ?
+                " free day. " : " working day.") + "because in this date, the day was " + userDate.getDayOfWeek());
 
     }
 }
