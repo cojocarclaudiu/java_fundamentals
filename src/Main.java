@@ -1,9 +1,9 @@
-import java.time.temporal.WeekFields;
 import java.util.Scanner;
 import java.time.*;
 
 public class Main {
     public static void main(String[] args) {
+          Scanner scann = new Scanner(System.in);
         System.out.println("Exercises ");
         //1.
         System.out.println("1.Write a program to display Hello, <Your name> instead of Hello, World! on the screen");
@@ -52,7 +52,6 @@ public class Main {
         System.out.println("\n%%%%%%%%%%%GEOMETRY EXERCISES%%%%%%%%%%%%%%%%%%%\n");
 
         System.out.println("1.Declare two variables corresponding to the sides of a rectangle and count its area and circumference");
-          Scanner scann = new Scanner(System.in);
         System.out.print("length= ");
         int length = scann.nextInt();
         System.out.print("weight= ");
@@ -104,6 +103,7 @@ public class Main {
         }while(result !=0);
 
 
+
         System.out.println("2.Using a class that offers date and time operations, download:");
         System.out.println("Current time: " + LocalTime.now());
         LocalDate todayDate = LocalDate.now();
@@ -112,8 +112,6 @@ public class Main {
         System.out.println("Number of the day of the month: " + todayDate.getDayOfMonth());
         Month monthToday = todayDate.getMonth();
         System.out.println("Number of the month: " + monthToday.getValue());
-
-        System.out.println("\n");
 
         System.out.print("day: ");
         int day = scann.nextByte();
@@ -124,7 +122,99 @@ public class Main {
         LocalDate userDate = LocalDate.of(year, month, day);
         System.out.println("Your date is : " + userDate + " This day is a " +
                 (userDate.getDayOfWeek().getValue() == 6 || userDate.getDayOfWeek().getValue() == 7 ?
-                " free day. " : " working day.") + "because in this date, the day was " + userDate.getDayOfWeek());
+                " free day. " : " working day.") + "because in this date, the day was " + userDate.getDayOfWeek() + "\n\n");
+
+
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$LOOPS EXERCISES$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+
+        System.out.println("1.List numbers from -20 to 20 using a loop. Then write out:");
+        for (int i = -20 ; i < 21 ; i++){
+            System.out.print(i+ " ");
+        }
+        System.out.print("\nFirst 6 numbers: ");
+        for (int i = -20; i < -14 ; i++){
+            System.out.print( i + " ");
+        }
+        System.out.print("\nAll even number: ");
+        for (int i = -20; i < 21 ; i++){
+            System.out.print(i % 2 != 0 ? i + " " : "");
+        }
+        System.out.print("\nAll number except number 5: ");
+        for (int i = -20; i < 21 ; i++){
+            System.out.print(i != 5 ? i + " " : "");
+        }
+        System.out.print("\nAll number up to and including 7: ");
+        for (int i = -20; i < 8 ; i++){
+            System.out.print(i + " ");
+        }
+        System.out.print("\nAll number divisible by 3: ");
+        int sum = 0;
+        for (int i = -20; i < 21 ; i++){
+            sum += i;
+            System.out.print(i % 3 == 0 && i != 0 ? i + " " : "" );
+        }
+        System.out.print("\nSum of all number: " + sum);
+        int sum2 = 0;
+        for (int i = 4 ; i < 21 ; i++){
+            sum2 += i;
+        }
+        System.out.println("\nSum of all numbers greater or equal with 4: " + sum2);
+        System.out.println("\nAll numbers and their powers:");
+        for (int i = -20 ; i < 21 ; i++){
+            System.out.println(i +" "+ Math.pow(i,2));
+        }
+        System.out.println("\nAll numbers and their modulo 10:");
+        for (int i = -20 ; i < 21 ; i++){
+            System.out.println(i +" "+ i % 10);
+        }
+        System.out.println("2.Using a class that offers operations on date and time, get the current time " +
+                "(hour, minute, and second) and write these values using the characters \\*, " +
+                "whose number equals the given value. To make it difficult," +
+                " one line can contain up to 10 * characters.");
+        LocalTime timeNow = LocalTime.now().withNano(0);
+        System.out.println("Current time: " + timeNow);
+        System.out.print("\nHours:");
+        for (int i = 0 ; i < timeNow.getHour() ; i++){
+            if(i% 10 == 0) System.out.println();
+            System.out.print("*");
+        }
+        System.out.print("\n\nMinute:");
+        for (int i = 0 ; i < timeNow.getMinute() ; i++){
+            if(i% 10 == 0) System.out.println();
+            System.out.print("*");
+        }
+        System.out.print("\n\nSecond:");
+        for (int i = 0 ; i < timeNow.getSecond() ; i++){
+            if(i% 10 == 0) System.out.println();
+            System.out.print("*");
+        }
+
+        System.out.println("3.Download a date or input from user and create a calendar page.");
+        System.out.print("day: ");
+        int day2 = scann.nextByte();
+        System.out.print("month: ");
+        int month2 = scann.nextByte();
+        System.out.print("year: ");
+        int year2 = scann.nextShort();
+        LocalDate userDate2 = LocalDate.of(year2, month2, day2);
+        int today2 = userDate2.getDayOfMonth();
+        int firstDayOFTheMoon = userDate2.withDayOfMonth(1).getDayOfWeek().getValue();
+        int lastDayOfTheMoon = userDate2.getMonth().length(userDate2.isLeapYear());
+        System.out.println(lastDayOfTheMoon);
+        System.out.println("Mo Tu We Th Fr Sa Su");
+        int counter = 0;
+        for(int day3 = 2 - firstDayOFTheMoon; day3 <= lastDayOfTheMoon ; day3 ++){
+            counter ++;
+            if( day3 < 1 ){
+                System.out.print("   ");
+            }else if(day3 < 10){
+                System.out.print( " " + day3 +" ");
+            }else System.out.print(day3 +" " );
+            if (counter == 7) {
+                counter = 0;
+                System.out.println();
+            }
+        }
 
     }
 }
