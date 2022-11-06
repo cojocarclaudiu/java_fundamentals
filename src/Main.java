@@ -215,6 +215,28 @@ public class Main {
                 System.out.println();
             }
         }
+        System.out.println("###############################SIMPLE CLASS AND OBJECT EXERCISES###########################\n");
+        System.out.println("1.Create a Person class\n" +
 
+                "\n" +
+                "add fields: name, surname, gender, age, pesel\n" +
+                "\n" +
+                "add a method to check whether a given person has reached retirement age (e.g. hasReachedRetirementAge()); for women, let's assume the retirement age is >=60 years, and for men >=65 years\n" +
+                "\n" +
+                "add a method that returns the age difference from one person to another\n" +
+                "\n" +
+                "let the method take a parameter of type Person\n" +
+                "\n" +
+                "it should not return negative values as the difference of years\n" +
+                "\n" +
+                "add a method that calculates and returns how many years are left before retirement");
+
+        Person personOne = new Person("Claudiu","Cojocar", Gender.MALE,26,1951130330201L);
+        Person personTwo = new Person("Emilia","Barba",Gender.FEMALE,24,2971110330156L);
+        personOne.yearsBeforeRetirement();
+        personOne.hasReachedRetirementAge();
+        personTwo.yearsBeforeRetirement();
+        personTwo.hasReachedRetirementAge();
+        System.out.println(personTwo.differenceOfYears(personOne)+"\n");
     }
 }
