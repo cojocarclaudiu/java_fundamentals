@@ -325,12 +325,13 @@ public class Main {
             System.out.println( i == 0 || i == 7 ? " # # # # # # # #" :(lastString +"#"));
             if(lastString.length()>1) lastString = lastString.substring(2);
         }
-//        System.out.println("4.Write a program multiplies the digits for a given number (as String) until the result is a one-digit number. \n");
-//
-//        System.out.println("5.Write a program that checks who won a Tic-Tac-Toe game.\n");
-//
-//        System.out.println("6.Write a program that validates the correctness of a given personal ID number.\n");
-//
+        System.out.println("4.Write a program multiplies the digits for a given number (as String) until the result is a one-digit number. \n");
+        System.out.print("number= ");
+        long numberToReduce = scann.nextLong();
+        numberToReduce(numberToReduce);
+          System.out.println("5.Write a program that checks who won a Tic-Tac-Toe game.\n");
+          String userTicTacToe = "XOXXOOOXO";
+          whoWinAtTicTacToe(userTicTacToe);
 //        System.out.println("7.A Car class is provided:" +
 //                "Generate getter and setter methods for all fields; use key shortcuts Alt+Ins\n" +
 //                "\n" +
@@ -455,6 +456,56 @@ public class Main {
 //                "Add a function to support the maximum debit, e.g.1000. If the amount after the operation is lower, do not execute withdrawal but display the message: \"You cannot perform an operation exceeding the debit\"\n" +
 //                "\n" +
 //                "Implement the transfer method for transfers from the current account to another one.\n");
+    }
+    private static void whoWinAtTicTacToe(String userTicTacToe) {
+        String matrix[][] = new String[3][3];
+        int index = 0;
+        for(int i = 0 ; i < 3; i++){
+            for(int j = 0 ; j < 3; j++){
+                matrix[i][j]= userTicTacToe.substring(index++,index);
+            }
+        }
+        for(int i = 0 ; i < 3; i++){
+            for(int j = 0 ; j < 3; j++){
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
+        if((matrix[0][0].equals("X") && matrix[0][1].equals("X") && matrix[0][2].equals("X"))||
+                (matrix[1][0].equals("X") && matrix[1][1].equals("X") && matrix[1][2].equals("X"))||
+                (matrix[2][0].equals("X") && matrix[2][1].equals("X") && matrix[2][2].equals("X"))||
+                (matrix[0][0].equals("X") && matrix[1][0].equals("X") && matrix[2][0].equals("X"))||
+                (matrix[0][1].equals("X") && matrix[1][1].equals("X") && matrix[2][1].equals("X"))||
+                (matrix[0][2].equals("X") && matrix[1][2].equals("X") && matrix[2][2].equals("X"))||
+                (matrix[0][0].equals("X") && matrix[1][1].equals("X") && matrix[2][2].equals("X"))||
+                (matrix[0][2].equals("X") && matrix[1][1].equals("X") && matrix[2][0].equals("X"))){
+            System.out.println("Player X winn!!");
+
+        }else if((matrix[0][0].equals("O") && matrix[0][1].equals("O") && matrix[0][2].equals("O"))||
+                (matrix[1][0].equals("O") && matrix[1][1].equals("O") && matrix[1][2].equals("O"))||
+                (matrix[2][0].equals("O") && matrix[2][1].equals("O") && matrix[2][2].equals("O"))||
+                (matrix[0][0].equals("O") && matrix[1][0].equals("O") && matrix[2][0].equals("O"))||
+                (matrix[0][1].equals("O") && matrix[1][1].equals("O") && matrix[2][1].equals("O"))||
+                (matrix[0][2].equals("O") && matrix[1][2].equals("O") && matrix[2][2].equals("O"))||
+                (matrix[0][0].equals("O") && matrix[1][1].equals("O") && matrix[2][2].equals("O"))||
+                (matrix[0][2].equals("O") && matrix[1][1].equals("O") && matrix[2][0].equals("O"))){
+            System.out.println("Player O winn!!");
+        }else System.out.println("Nobody winn...");
+
+    }
+
+    private static void numberToReduce(long numberToReduce) {
+        if(numberToReduce < 10){
+            System.out.println(numberToReduce);
+        }else{
+            long prod = 1;
+            System.out.println(numberToReduce);
+            while(numberToReduce>0){
+                prod *= numberToReduce%10;
+                numberToReduce /=10;
+            }
+            numberToReduce(prod);
+        }
     }
 
     private static void displayLine(int[][] matrix) {
