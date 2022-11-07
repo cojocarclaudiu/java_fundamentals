@@ -332,63 +332,112 @@ public class Main {
           System.out.println("5.Write a program that checks who won a Tic-Tac-Toe game.\n");
           String userTicTacToe = "XOXXOOOXO";
           whoWinAtTicTacToe(userTicTacToe);
-//        System.out.println("7.A Car class is provided:" +
-//                "Generate getter and setter methods for all fields; use key shortcuts Alt+Ins\n" +
-//                "\n" +
-//                "Test the Car class using the CarApplication class" +
-//                "Add a field to store the mileage (int mileage) to the Car program; set the default value to 0\n" +
-//                "\n" +
-//                "Add (generate) a getter type method for this field (getMileage())\n" +
-//                "\n" +
-//                "Add the drive(int mileage) method that increases the mileage\n" +
-//                "\n" +
-//                "Test the program operation\n" +
-//                "\n" +
-//                "Modify the drive(int mileage) method to set the used field to the appropriate value; " +
-//                "if the mileage is positive, the used field should have value true\n" +
-//                "\n" +
-//                "Test the operation\n");
-//
-//        System.out.println("8.The Calculator and CalculatorApplication classes are provided:" +
-//                "Based on the add(int a, int b) method, implement the subsequent methods:\n" +
-//                "\n" +
-//                "int subtract(int a, int b) - subtraction: a - b\n" +
-//                "\n" +
-//                "int multiply(int a, int b) - multiplication: a * b\n" +
-//                "\n" +
-//                "double divide(int a, int b) - division: a / b\n" +
-//                "\n" +
-//                "boolean isPositive(int a) - checks whether the number is positive\n" +
-//                "\n" +
-//                "boolean isNegative(int a) - checks whether the number is negative\n" +
-//                "\n" +
-//                "boolean isOdd(int a) - checks whether the number is odd\n" +
-//                "\n" +
-//                "int min(int a, int b) - returns the smaller of the numbers\n" +
-//                "\n" +
-//                "int max(int a, int b) - returns the greater of the numbers\n" +
-//                "\n" +
-//                "double average(int a, int b) - returns the average for the numbers\n" +
-//                "\n" +
-//                "int power(int a, int x) - returns a^m^ (a to the power m)\n" +
-//                "\n" +
-//                "Based on the solution from point a, implement 3-argument versions of these methods " +
-//                "(try to use 2 - argument versions of these methods):\n" +
-//                "\n" +
-//                "int add(int a, int b, int c)\n" +
-//                "\n" +
-//                "int subtract(int a, int b, int c)\n" +
-//                "\n" +
-//                "int multiply(int a, int b, int c)\n" +
-//                "\n" +
-//                "double divide(int a, int b, int c)\n" +
-//                "\n" +
-//                "int min(int a, int b, int c)\n" +
-//                "\n" +
-//                "int max(int a, int b, int c)\n" +
-//                "\n" +
-//                "double average(int a, int b, int c)\n");
-//
+        System.out.println("7.A Car class is provided:" +
+                "Generate getter and setter methods for all fields; use key shortcuts Alt+Ins\n" +
+                "\n" +
+                "Test the Car class using the Main class" +
+                "Add a field to store the mileage (int mileage) to the Car program; set the default value to 0\n" +
+                "\n" +
+                "Add (generate) a getter type method for this field (getMileage())\n" +
+                "\n" +
+                "Add the drive(int mileage) method that increases the mileage\n" +
+                "\n" +
+                "Test the program operation\n" +
+                "\n" +
+                "Modify the drive(int mileage) method to set the used field to the appropriate value; " +
+                "if the mileage is positive, the used field should have value true\n" +
+                "\n" +
+                "Test the operation\n");
+
+        Car audi = new Car();
+        audi.setModel("R16");
+        audi.setColor("Pearled-White");
+        audi.setProductionYear(2022);
+        audi.setUsed(false);
+
+        System.out.println(audi.getModel()+" "+audi.getColor()+" "+audi.getProductionYear()+" "+audi.isUsed());
+        audi.drive(100);
+        System.out.println(audi.getModel()+" "+audi.getColor()+" "+audi.getProductionYear()+" "+audi.isUsed());
+
+        System.out.println("8.The Calculator and CalculatorApplication classes are provided:" +
+                "Based on the add(int a, int b) method, implement the subsequent methods:\n" +
+                "\n" +
+                "int subtract(int a, int b) - subtraction: a - b\n" +
+                "\n" +
+                "int multiply(int a, int b) - multiplication: a * b\n" +
+                "\n" +
+                "double divide(int a, int b) - division: a / b\n" +
+                "\n" +
+                "boolean isPositive(int a) - checks whether the number is positive\n" +
+                "\n" +
+                "boolean isNegative(int a) - checks whether the number is negative\n" +
+                "\n" +
+                "boolean isOdd(int a) - checks whether the number is odd\n" +
+                "\n" +
+                "int min(int a, int b) - returns the smaller of the numbers\n" +
+                "\n" +
+                "int max(int a, int b) - returns the greater of the numbers\n" +
+                "\n" +
+                "double average(int a, int b) - returns the average for the numbers\n" +
+                "\n" +
+                "int power(int a, int x) - returns a^m^ (a to the power m)\n");
+
+        Calculator calculator = new Calculator();
+        System.out.print("a=");
+        int firstNumberEx8 = scann.nextInt();
+        System.out.print("b=");
+        int secondNumberEx8 = scann.nextInt();
+        int var = -1;
+        do{
+            System.out.println("1.+  2.-  3.*  4./  5.A+?   6.A-?   7.ODD?   8.MIN?   9.MAX?   10.AVR?   11.POW?   12.Change numbers?");
+            var = scann.nextInt();
+            switch (var){
+                case 0:
+                    var = 0;
+                    break;
+                case 1:
+                    System.out.println(calculator.add(firstNumberEx8,secondNumberEx8));
+                    break;
+                case 2:
+                    System.out.println(calculator.subtract(firstNumberEx8,secondNumberEx8));
+                    break;
+                case 3:
+                    System.out.println(calculator.multiply(firstNumberEx8,secondNumberEx8));
+                    break;
+                case 4:
+                    System.out.println(calculator.divide(firstNumberEx8,secondNumberEx8));
+                    break;
+                case 5:
+                    System.out.println(calculator.isPositive(firstNumberEx8));
+                    break;
+                case 6:
+                    System.out.println(calculator.isNegative(firstNumberEx8));
+                    break;
+                case 7:
+                    System.out.println(calculator.isOdd(firstNumberEx8));
+                    break;
+                case 8:
+                    System.out.println(calculator.min(firstNumberEx8,secondNumberEx8));
+                    break;
+                case 9:
+                    System.out.println(calculator.max(firstNumberEx8,secondNumberEx8));
+                    break;
+                case 10:
+                    System.out.println(calculator.average(firstNumberEx8,secondNumberEx8));
+                    break;
+                case 11:
+                    System.out.println(calculator.power(firstNumberEx8,secondNumberEx8));
+                    break;
+                case 12:
+                    System.out.print("a=");
+                    firstNumberEx8 = scann.nextInt();
+                    System.out.print("b=");
+                    secondNumberEx8 = scann.nextInt();
+                default:
+                    System.out.println("Your choice is invalid. Choose between 1 and 11, or 0 if you want to exit.");
+            }
+        }while(var !=0);
+
 //        System.out.println("9.Implement a stack to store Integer type numbers." +
 //                "the constructor creates a count element array for storing Integer type elements\n" +
 //                "\n" +
