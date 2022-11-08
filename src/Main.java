@@ -438,21 +438,62 @@ public class Main {
             }
         }while(var !=0);
 
-//        System.out.println("9.Implement a stack to store Integer type numbers." +
-//                "the constructor creates a count element array for storing Integer type elements\n" +
-//                "\n" +
-//                "the push() method throws the element onto the stack (to the first free position). If the stack is empty, a relevant message is displayed and nothing happens\n" +
-//                "\n" +
-//                "the pop() method deletes (returns and removes from the stack) the first element from the “top” of the stack. If the stack is empty, the method displays an appropriate message and nothing is done (null to be returned)\n" +
-//                "\n" +
-//                "the isEmpty() methods checks whether the stack is empty, i.e. whether there is no element in the array\n" +
-//                "\n" +
-//                "the isFull() method checks whether the stack is full, i.e. for example at a 5 - element stack, all 5 array elements have a value (other than null)\n" +
-//                "\n" +
-//                "the toString() method displays the stack contents\n" +
-//                "\n" +
-//                "hint: enter an additional variable that stores the index of the current or next item in the array and modify its value when implementing the push() and pop() methods`\n");
-//
+
+
+        System.out.println("9.Implement a stack to store Integer type numbers." +
+                "the constructor creates a count element array for storing Integer type elements\n" +
+                "\n" +
+                "the push() method throws the element onto the stack (to the first free position). If the stack is empty, a relevant message is displayed and nothing happens\n" +
+                "\n" +
+                "the pop() method deletes (returns and removes from the stack) the first element from the “top” of the stack. If the stack is empty, the method displays an appropriate message and nothing is done (null to be returned)\n" +
+                "\n" +
+                "the isEmpty() methods checks whether the stack is empty, i.e. whether there is no element in the array\n" +
+                "\n" +
+                "the isFull() method checks whether the stack is full, i.e. for example at a 5 - element stack, all 5 array elements have a value (other than null)\n" +
+                "\n" +
+                "the toString() method displays the stack contents\n" +
+                "\n" +
+                "hint: enter an additional variable that stores the index of the current or next item in the array and modify its value when implementing the push() and pop() methods`\n");
+
+        Stack stack = new Stack(10);
+        System.out.println(stack.toString());
+        System.out.println(stack.isEmpty());
+        System.out.println(stack.isFull());
+        stack.push(10);
+        System.out.println(stack.isEmpty());
+        System.out.println(stack.toString());
+        stack.push(10);
+        stack.push(110);
+        stack.push(101);
+        stack.push(1012);
+        stack.push(1330);
+        stack.push(41210);
+        stack.push(1120);
+        stack.push(14120);
+        stack.push(410);
+        System.out.println(stack.isEmpty());
+        System.out.println(stack.isFull());
+        System.out.println(stack.toString());
+        stack.pop();
+        stack.pop();
+        System.out.println(stack.toString());
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        System.out.println(stack.toString());
+        stack.push(123);
+        System.out.println(stack.toString());
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+
+
 //        System.out.println("10.Based on the task above, write a program that will \"mimic\" an array of any size " +
 //                "that can hold values of type Integer. There is a class:\n" +
 //                "Functionalities:\n" +
